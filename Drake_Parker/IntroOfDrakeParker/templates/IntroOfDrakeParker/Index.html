@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Drake Parker | Full Stack Developer">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../CommonStyle.css">
+    <script src="../Disabled_Keys.js"></script>
+    <link rel="shortcut icon" href="{%static '/IntroOfDrakeParker/favicon.ico' %}" type="image/x-icon">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-219708644-1">
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-219708644-1');
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"> -->
+    <script>
+        $(document).keydown(function(event) {
+            if (event.keyCode == 123) {
+                return false;
+            } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
+                return false;
+            }
+        });
+
+        $(document).on("contextmenu", function(e) {
+            e.preventDefault();
+        });
+        $(document).ready(function() {
+            $('body > div:last').remove()
+            $('body > script:last').remove()
+        })
+    </script>
+    <!-- <link rel="stylesheet" href="Style.css" /> -->
+    <!-- <a href="{%static '/ProjectsMadeByDrakeParker/mystatic.txt' %}">Click me </a> -->
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            overflow: overlay;
+        }
+        
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: url("{%static '/IntroOfDrakeParker/Landscape_Background.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 50px;
+        }
+        
+         ::-webkit-scrollbar {
+            width: 12px;
+            border-radius: 10px;
+            background: transparent;
+        }
+        
+         ::-webkit-scrollbar-thumb {
+            background: linear-gradient(#03a9f4, #ff0058);
+            border-radius: 10px;
+        }
+        
+         ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(#4dff03, #00d0ff);
+        }
+        
+         ::-webkit-scrollbar-thumb:active {
+            background: linear-gradient(#ffbc00, #ff0058);
+        }
+        
+         ::selection {
+            background: linear-gradient(#ffbc00, #ff0058);
+            color: cyan;
+        }
+        
+        .container {
+            position: relative;
+            width: calc(100% - 100px);
+            min-height: calc(100vh - 280px);
+            min-height: 300px;
+            background: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
+        }
+        
+        header {
+            position: absolute;
+            top: -40px;
+            right: 20px;
+            left: 20px;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            border-left: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        
+        header .logo {
+            color: #8a2435;
+            font-weight: 700;
+            text-decoration: none;
+            font: size 2em;
+        }
+        
+        header ul {
+            display: flex;
+        }
+        
+        header ul li {
+            list-style: none;
+            margin: 0 10px;
+        }
+        
+        header ul li a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #8a2435;
+            padding: 8px 15px;
+            border-radius: 25px;
+        }
+        
+        header ul li a:hover,
+        header ul li a.active {
+            background: #fff;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        header ul li .login {
+            background: #ff9a9e;
+            text-decoration: none;
+            color: #f6416c;
+            border-radius: 50px;
+        }
+        
+        header ul li .login:hover {
+            background: #f6416c;
+            text-decoration: none;
+            color: #4afff0;
+        }
+        
+        .content {
+            transform: translateX(-100px);
+            max-width: 700px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            border-left: 1px solid rgba(255, 255, 255, 0.5);
+            padding: 40px;
+            padding-left: 110px;
+        }
+        
+        .content h2 {
+            font-size: 3em;
+            color: #8a2435;
+        }
+        
+        .content p {
+            font-size: 1.2em;
+            color: #8a2435;
+            text-transform: capitalize;
+        }
+        
+        .content a {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #fff;
+            color: #8a2435;
+            margin-top: 20px;
+            border: radius 30px;
+            font-size: 1.2em;
+            font-weight: 500;
+            text-decoration: none;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+            border-radius: 20px;
+        }
+        
+        .imgBx img {
+            max-width: 400px;
+            animation: animate 4s linear infinite;
+            height: 460px;
+        }
+        
+        @keyframes animate {
+            0%,
+            100% {
+                transform: translateY(50px);
+            }
+            50% {
+                transform: translateY(100px);
+            }
+        }
+        
+        .sci {
+            position: absolute;
+            right: -25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        .sci li {
+            list-style: none;
+        }
+        
+        .sci li a {
+            text-decoration: none;
+            width: 50px;
+            height: 50px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            margin: 50px 0;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .sci li a img {
+            transform: scale(0.6);
+            transition: 0.5s;
+        }
+        
+        .sci li:hover a img {
+            transform: scale(0.6) rotate(360deg);
+        }
+        
+        .copyrightText {
+            position: absolute;
+            bottom: 30px;
+            left: 50px;
+            color: #8a2435;
+            margin-top: 40px;
+        }
+        
+        @media (max-width:1200px) {
+            .container {
+                position: relative;
+                width: calc(100% - 20px);
+            }
+        }
+        
+        @media (max-width:992px) {
+            section {
+                padding: 50px 10px 10px;
+            }
+            .container {
+                flex-direction: column;
+                height: auto;
+                padding: 20px;
+            }
+            .container .content {
+                transform: translateX(0px);
+                max-width: 100%;
+                padding: 30px;
+                margin-top: 40px;
+            }
+            header {
+                position: relative;
+                flex-direction: column;
+                width: 100%;
+                top: -60px;
+                padding: 20px;
+                left: 0;
+                right: 0;
+            }
+            header ul {
+                margin-top: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            header ul li {
+                margin: 2px;
+            }
+            header ul li a {
+                display: inline-block;
+            }
+            .imgBx {
+                margin-bottom: 50px;
+            }
+            .content a {
+                font-size: 1em;
+                padding: 10px 20px;
+            }
+            @keyframes animate {
+                0%,
+                100% {
+                    transform: translateY(-20px);
+                }
+                50% {
+                    transform: translateY(20px);
+                }
+            }
+            .sci {
+                position: relative;
+                flex-direction: row;
+                left: 0;
+            }
+            .sci li a {
+                margin: 0 10px;
+            }
+            .copyrightText {
+                position: relative;
+                bottom: initial;
+                left: inherit;
+                width: 100%;
+                color: #8a2435;
+                text-align: center;
+                margin-top: 20px;
+            }
+        }
+        
+        @media (max-width:600px) {
+            .content h2 {
+                font-size: 1em;
+                color: #8a2435;
+            }
+            .content p {
+                font-size: 1em;
+                color: #8a2435;
+            }
+            .imgBx img {
+                max-width: 300px;
+            }
+        }
+    </style>
+    <title>Drake Parker | Full Stack Developer</title>
+</head>
+
+<body onload="typeWriter()">
+    <script>
+        document.addEventListener(
+            "contextmenu",
+            function(e) {
+                e.preventDefault();
+            },
+            false
+        );
+
+        document.onkeypress = function(event) {
+            event = event || window.event;
+            if (event.keyCode == 123) {
+                //alert('No F-12');
+                return false;
+            }
+        };
+        document.onmousedown = function(event) {
+            event = event || window.event;
+            if (event.keyCode == 123) {
+                //alert('No F-keys');
+                return false;
+            }
+        };
+        document.onkeydown = function(event) {
+            event = event || window.event;
+            if (event.keyCode == 123) {
+                //alert('No F-keys');
+                return false;
+            }
+        };
+        document.onkeypress = function(event) {
+            event = event || window.event;
+            if (event.keyCode == 16) {
+                //alert('No F-12');
+                return false;
+            }
+        };
+        document.onmousedown = function(event) {
+            event = event || window.event;
+            if (event.keyCode == 16) {
+                //alert('No F-keys');
+                return false;
+            }
+        };
+        document.onkeydown = function(event) {
+            event = event || window.event;
+            if (event.keyCode == 16) {
+                //alert('No F-keys')
+                return false;
+            }
+        };
+        document.onkeypress = function(event) {
+            event = event || window.event;
+            if (event.keyCode == 17) {
+                //alert('No F-12');
+                return false;
+            }
+        };
+        document.onmousedown = function(event) {
+            event = event || window.event;
+            if (event.keyCode == 17) {
+                //alert('No F-keys');
+                return false;
+            }
+        };
+        document.onkeydown = function(event) {
+            event = event || window.event;
+            if (event.keyCode == 17) {
+                //alert('No F-keys')
+                return false;
+            }
+        };
+        document.onkeypress = function(event) {
+            event = event || window.event;
+            if (event.keyCode == 18) {
+                //alert('No F-12');
+                return false;
+            }
+        };
+        document.onmousedown = function(event) {
+            event = event || window.event;
+            if (event.keyCode == 18) {
+                //alert('No F-keys');
+                return false;
+            }
+        };
+        document.onkeydown = function(event) {
+            event = event || window.event;
+            if (event.keyCode == 18) {
+                //alert('No F-keys')
+                return false;
+            }
+        };
+    </script>
+    <script>
+        var i = 0;
+        var txt = 'Hi, My name is Drake Parker. I am a Full Stack Web Developer. I have worked on many projects. I have contributed in some Open Source Projects. I have made a Python Package which is freely available on [pypi.org] and Github. I have made some extremely beautiful web contents that you can view in "My Projects" link present in the Navigation Bar.';
+        var speed = 80;
+
+        function typeWriter() {
+            if (i < txt.length) {
+                document.getElementById("demo").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+    </script>
+    <section>
+        <div class="container">
+            <header>
+                <a href="#" class="logo">Drake Parker</a>
+                <ul>
+                    <li><a href="" class="active" target="_self">Home</a></li>
+                    <li><a href="https://www.webdevdrake.cf/DP" target="_blank">Drake Forum</a></li>
+                    <li><a href="https://www.webdevdrake.cf/Drake_Chat/" target="_blank">Drake Chat</a></li>
+                    <li><a href="https://github.com/DrakeParker257980-Developer" target="_blank">About Me</a></li>
+                    <li><a href="https://www.webdevdrake.cf/Intro Of Drake Parker/My_Projects" target="_blank">My Projects</a></li>
+                    <!-- <li><a href="Contact" target="_blank">Contact Me</a></li> -->
+                    <!--<li><a href="../Login System/Login.html" class="login" target="_blank">Login Here</a></li>-->
+                </ul>
+            </header>
+            <!--<embed src="../Assets/Shortening - Jake_Bar.mp3" type="audio/mpeg" loop="true" autostart="true" hidden="true" id="bgm">-->
+            <embed src="../Assets/Shortening - Jake_Bar" loop=100000000000000000000 //here you can put any number to represent the number of times you want to loop autostart="true" hidden="true" volume="100">
+            <audio src="{%static '/IntroOfDrakeParker/Shortening - Jake_Bar.mp3' %}" autostart autoplay loop>Your Broser Don't Support Background Music</audio>
+            </embed>
+            <div class="content">
+                <h2>Drake Parker</h2>
+                <p id="demo"></p>
+                <a href="https://github.com/DrakeParker257980-Developer" target="_blank"> Learn More </a>
+            </div>
+            <div class="imgBx">
+                <img src="{%static '/IntroOfDrakeParker/Character_New.png' %}">
+            </div>
+            <!--<ul class="sci">-->
+            <!--    <li>-->
+            <!--        <a href="https://www.facebook.com" target="_blank"><img src="../Images/facebook.png"></a>-->
+            <!--    </li>-->
+            <!--    <li>-->
+            <!--        <a href="https://www.twitter.com" target="_blank"><img src="../Images/twitter.png"></a>-->
+            <!--    </li>-->
+            <!--    <li>-->
+            <!--        <a href="https://www.instagram.com" target="_blank"><img src="../Images/instagram.png"></a>-->
+            <!--    </li>-->
+            <!--</ul>-->
+            <div class="copyright">
+                <p class="copyrightText">Copyright © 2020 - 2022 Drake Parker. All rights reserved.</p>
+            </div>
+        </div>
+    </section>
+    <script>
+        $(document).ready(function() {
+            $('body > div:last').remove()
+            $('body > script:last').remove()
+        })
+    </script>
+</body>
+
+</html>
